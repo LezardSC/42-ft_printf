@@ -10,22 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//Fonction principale. Elle sert à prendre les variatiques
+//Puis elle renvoie à putstr jusqu'au pourcent.
+//Puis elle renvoie à la bonne fonction pour le pourcent.
+//Puis elle renvoie à putstr pour la suite.
+
 #include "ft_printf.h"
 #include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {
-	const char	*str;
-	va_list		arg;
+	// const char	*str;
+	// va_list		arg;
 
-	va_start(arg, format);
-	printf("Hello: %s", format);
-	str = va_arg(arg, const char *);
-	printf(", %s\n", str);
-	str = va_arg(arg, const char *);
-	printf(", %s\n", str);
-	va_end(arg);
-	return (0);
+	// va_start(arg, format);
+	// printf("Hello: %s", format);
+	// str = va_arg(arg, const char *);
+	// printf(", %s\n", str);
+	// str = va_arg(arg, const char *);
+	// printf(", %s\n", str);
+	// va_end(arg);
+	// return (0);
 }
 
 int	main(void)
