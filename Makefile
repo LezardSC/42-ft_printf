@@ -6,7 +6,7 @@
 #    By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 15:16:11 by jrenault          #+#    #+#              #
-#    Updated: 2022/11/24 14:47:13 by jrenault         ###   ########lyon.fr    #
+#    Updated: 2022/11/25 11:26:09 by jrenault         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c print_text.c search_arg.c ispercent_c.c ispercent_d_i.c ispercent_u.c ispercent_s.c ispercent_x.c ispercent_capx.c ispercent_p.c
+SRCS = ft_printf.c search_arg.c ispercent_c.c ispercent_d_i.c ispercent_u.c ispercent_s.c ispercent_x.c ispercent_capx.c ispercent_p.c
 OBJS = ${SRCS:.c=.o}
 
 CC = gcc
@@ -32,8 +32,8 @@ all:		${NAME} Makefile
 
 ${NAME}: 	${OBJS} Makefile
 			make -C libft
-			cp libft/libft.a ./libft.a
-			${LIB} ${NAME} ${OBJS}
+			cp libft/libft.a ./libftprintf.a
+			${LIB} ${NAME} ${OBJS} libftprintf.a
 
 clean:
 			${RM} ${OBJS}

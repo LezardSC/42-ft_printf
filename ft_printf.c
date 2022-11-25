@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:14:41 by jrenault          #+#    #+#             */
-/*   Updated: 2022/11/24 15:42:20 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2022/11/25 15:40:20 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,54 +22,48 @@
 
 int	ft_printf(const char *format, ...)
 {
-	char			*str;
-	char			*temp_str;
 	int				i;
-	int				start;
-	size_t			len;
+	int				j;
+	int				adjust;
 	va_list			arg;
 
 	if (!format)
 		return (0);
 	va_start(arg, format);
-	len = ft_strlen(format);
-	str = (char *)malloc(sizeof(char *) * (len + 1));
-	str = (char *)format;
 	i = 0;
-	start = 0;
-	while (str[i])
+	j = 0;
+	adjust = 0;
+	while (format[i])
 	{
-		start = i;
-		while (str[i] != '%')
+		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+				return (i + j - adjust);
+			j += search_arg(arg, format[i + 1]);
+			if (j == -1)
+			{
+				i++;
+				adjust++;
+			}
+			else
+			{
+				i += 2;
+				adjust += 2;
+			}
+		}
+		else
+		{
+			ft_putchar_fd(format[i], 1);
 			i++;
 		}
-		temp_str = ft_substr(str, start, (i - start));
-//		temp_str = ft_strncpy(temp_str, str, i);
-		print_text(temp_str);
-		search_arg(arg, str[i + 1]);
-		i += 2;
 	}
 	va_end(arg);
-	return (0);
+	return (i + j - adjust);
 }
 
-int	main(void)
+int	main()
 {
-	char	c;
-	int		d;
-//	unsigned int	u;
-	char	*s;
-	
-
-	c = 'Z';
-	d = 125;
-//	u = 4294967295;
-	s = "Hello World!";
-	s1 = "Bye World!";
-
-	printf("Test %p Test %p Test %p", c, d, s);
+ 	printf("\n%d\n", printf(" %p ", 0));
 	printf("\n");
-	ft_printf("Test %p Test %p Test %p", c, d, s);
-	return (EXIT_SUCCESS);
+  	printf("\n%d\n", ft_printf(" %p ", 0));
 }

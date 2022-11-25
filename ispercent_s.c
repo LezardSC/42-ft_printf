@@ -6,13 +6,19 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 08:51:20 by jrenault          #+#    #+#             */
-/*   Updated: 2022/11/24 14:29:02 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2022/11/25 15:12:08 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ispercent_s(char *s)
+int	ispercent_s(char *s)
 {
+	if (!s)
+	{
+		write (1, "(null)", 6);
+		return (6);
+	}
 	ft_putstr(s);
+	return (ft_strlen(s));
 }

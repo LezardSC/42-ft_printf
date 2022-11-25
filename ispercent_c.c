@@ -6,13 +6,14 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 08:51:48 by jrenault          #+#    #+#             */
-/*   Updated: 2022/11/24 13:51:48 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2022/11/25 12:34:38 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ispercent_c(int c)
+int	ispercent_c(int c)
 {
 	write(1, &c, 1);
+	return (1);
 }

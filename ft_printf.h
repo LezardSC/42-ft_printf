@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:09:57 by jrenault          #+#    #+#             */
-/*   Updated: 2022/11/24 15:36:12 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2022/11/25 11:25:58 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-int		ft_printf(const char *str, ...);
-void	print_text(char *str);
-void	search_arg(va_list arg, char c);
-void	ispercent_c(int c);
-void	ispercent_d_i(int nb);
-void	ispercent_u(unsigned int u);
-void	ispercent_s(char *s);
-void	ispercent_x(int x);
-void	ispercent_capx(int x);
-void	ispercent_p(unsigned long long int p);
+int	ft_printf(const char *str, ...);
+int	search_arg(va_list arg, char c);
+int	ispercent_c(int c);
+int	ispercent_d_i(int nb);
+int	ispercent_u(unsigned int u);
+int	ispercent_s(char *s);
+int	ispercent_x(int x);
+int	ispercent_capx(int x);
+int	ispercent_p(unsigned long p);
 
 #endif
