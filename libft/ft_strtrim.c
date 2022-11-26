@@ -31,12 +31,10 @@ static int	is_set(char c, char *set)
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	int		i;
-	int		j;
 	int		size;
 	char	*isnul;
 
 	i = 0;
-	j = 0;
 	if (!s1)
 		return (NULL);
 	size = ft_strlen(s1);

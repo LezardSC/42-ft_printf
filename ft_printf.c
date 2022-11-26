@@ -10,13 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// J’écris jusqu’au pourcent
-// Je renvoie le pourcent avec l’arg.
-// J’identifie l’arg et renvoie à la bonne fonction.
-// J’affiche l’arg
-// Je reviens jusqu’au prochain pourcent ou la fin de la string
-// Je passe à l'arg d'après si il y a
-
 #include "ft_printf.h"
 #include <stdio.h>
 

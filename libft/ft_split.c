@@ -60,7 +60,7 @@ char	**ft_split(const char *s, char c)
 	unsigned int	start;
 	char			**split_tab;
 
-	if (s == '\0')
+	if (!s)
 		return (NULL);
 	split_tab = shrink_split(&i, &i_tab, s, c);
 	if (!split_tab)
