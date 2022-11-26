@@ -6,12 +6,17 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:14:41 by jrenault          #+#    #+#             */
-/*   Updated: 2022/11/25 15:40:20 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2022/11/26 17:58:28 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
+
+int	shrink_ft_printf()
+{
+
+}
 
 int	ft_printf(const char *format, ...)
 {
@@ -26,6 +31,8 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	j = 0;
 	adjust = 0;
+	if (write(1, 0, 0) != 0)
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -45,18 +52,7 @@ int	ft_printf(const char *format, ...)
 			}
 		}
 		else
-		{
-			ft_putchar_fd(format[i], 1);
-			i++;
-		}
+			ft_putchar_fd(format[i++], 1);
 	}
-	va_end(arg);
-	return (i + j - adjust);
-}
-
-int	main()
-{
- 	printf("\n%d\n", printf(" %p ", 0));
-	printf("\n");
-  	printf("\n%d\n", ft_printf(" %p ", 0));
+	return (va_end(arg), i + j - adjust);
 }

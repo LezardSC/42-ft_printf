@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 08:49:24 by jrenault          #+#    #+#             */
-/*   Updated: 2022/11/25 15:01:06 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2022/11/26 14:47:35 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	search_arg(va_list arg, char c)
 	else if (c == 'u')
 		j = ispercent_u(va_arg(arg, unsigned int));
 	else if (c == 'x')
-		j = ispercent_x(va_arg(arg, int));
+		j = ispercent_x(va_arg(arg, unsigned int));
 	else if (c == '%')
 	{
 		write(1, "%", 1);

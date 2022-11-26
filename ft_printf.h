@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:09:57 by jrenault          #+#    #+#             */
-/*   Updated: 2022/11/25 11:25:58 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2022/11/26 17:31:47 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	ispercent_c(int c);
 int	ispercent_d_i(int nb);
 int	ispercent_u(unsigned int u);
 int	ispercent_s(char *s);
-int	ispercent_x(int x);
-int	ispercent_capx(int x);
+int	ispercent_x(unsigned int x);
+int	ispercent_capx(unsigned int x);
 int	ispercent_p(unsigned long p);
 
 #endif
